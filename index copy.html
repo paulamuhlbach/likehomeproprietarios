@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id='titulo'>Página Exemplo</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+ 
+
+    <script>
+        const API_URL = "https://script.google.com/macros/s/AKfycbzUhV5payROz5hGvd_3rc51W5NtIHmoFzI1DmuBSz4ZiNiTJqhQNm2EX8SW4fm8SqJH/exec"; // <-- url api google -planilha
+    
+        fetch(API_URL)
+          .then(response => response.json())
+          .then(data => {
+            document.getElementById('titulo').innerText = data.titulo;
+            document.getElementById('conteudo').innerText = data.conteudo;
+          })
+          .catch(error => {
+            console.error('Erro ao carregar o conteúdo:', error);
+          });
+      </script>
+
+<header>
+    <h1>Bem-vindo à minha página!</h1>
+</header>
+
+<main>
+    <p id='conteudo'>Aguarde...</p>
+</main>
+
+<footer>
+    <p>&copy; 2025 - Meu Site</p>
+</footer>
+</body>
+</html>

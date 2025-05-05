@@ -1,0 +1,197 @@
+/* Estilo básico para a página */
+
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+
+html, body {
+  font-family: 'Titillium Web', sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  width: 100%;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+header {
+  background-color: #000;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+#logo {
+  margin-left: 25px;
+}
+
+nav {
+  margin-right: 25px;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+main {
+  padding: 0px;
+}
+
+#container_img_principal {
+  height: 70vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+#img_principal {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1);
+  transition: transform 2s ease;
+  transform-origin: center bottom;
+  display: block;
+}
+
+#sobreposicao {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-image: url('img/fundo-txt-img-principal.svg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+  padding: 2rem;
+  box-sizing: border-box;
+  color: #000;
+  z-index: 1;
+}
+
+#sobreposicao h2 {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  position: relative;
+  z-index: 1;
+  margin: 0.5rem 0;
+  max-width: 90%;
+}
+
+/* Responsivo para telas menores */
+@media (max-width: 768px) {
+  #sobreposicao {
+    width: 100%;
+    height: 35vh; /* metade da altura de 70vh da imagem principal */
+    top: auto;
+    bottom: 0; /* fixa na parte inferior da imagem */
+    padding: 1.5rem 1rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  #sobreposicao h2 {
+    font-size: 6vw;
+    max-width: 100%;
+  }
+}
+
+/* Aplica o zoom na imagem ao carregar a página */
+body.loaded #img_principal {
+  transform: scale(1.5); /* Nível de zoom desejado */
+}
+
+#sobre{
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+#container_sobre_txt{
+  display: table-cell;
+  vertical-align: middle;
+  padding-top: 5%;
+  padding-left: 10px;
+  font-size: 1.2rem;
+}
+
+#container_sobre{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#subtitulo_sobre{
+  font-size:xx-large;
+  text-align: center;
+  padding-top: 10px;
+  color: #9f5c39;
+}
+.img-container-sobre {
+  width: 100%;
+  max-width: 600px; /* limite opcional de largura */
+  aspect-ratio: 16 / 9; /* mantém proporção responsiva (pode ajustar) */
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.img-container-sobre img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+#parte-vantagens{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  background-color: #eceae6;
+}
+
+#unidade-vantagem{
+  width: calc(33.33% - 2px);  /* 3 colunas */
+  margin: 1px;                /* Adiciona um espaço entre as colunas e linhas */
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+}
+
+#rentabilizar{
+  background-image: url('img/img-quero-rentabilizar-back.jpg');
+}
+footer {
+  background-color: #eee;
+  text-align: center;
+  padding: 0px;
+  width: 100%;
+  bottom: 0;
+}
+
+
+/* Font Weights Utilitários */
+.titillium-web-extralight { font-weight: 200; }
+.titillium-web-light { font-weight: 300; }
+.titillium-web-regular { font-weight: 400; }
+.titillium-web-semibold { font-weight: 600; }
+.titillium-web-bold { font-weight: 700; }
+.titillium-web-black { font-weight: 900; }
+
+.titillium-web-extralight-italic { font-weight: 200; font-style: italic; }
+.titillium-web-light-italic { font-weight: 300; font-style: italic; }
+.titillium-web-regular-italic { font-weight: 400; font-style: italic; }
+.titillium-web-semibold-italic { font-weight: 600; font-style: italic; }
+.titillium-web-bold-italic { font-weight: 700; font-style: italic; }

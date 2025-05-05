@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Like Home Proprietários</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <header>
+    <div id="logo">
+      <img id="logo_top" src="img/logo-likehome-top.svg" alt="Like Home">
+    </div>
+    <nav>
+      <ul id="menu" class="menu">
+        <li id="nome_pagina_01" class="item_menu">Sobre</li>
+        <li id="nome_pagina_02" class="item_menu">Vantagens</li>
+        <li id="nome_pagina_03" class="item_menu">Serviços</li>
+        <li id="nome_pagina_04" class="item_menu">Quero rentabilizar</li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+<!--container da imagem principal-->
+  <div id="container_img_principal">
+    <img id="img_principal" src="img/foto_principal.jpg" alt="Like Home proprietários">
+    <div id="sobreposicao">
+      <h2 class="titillium-web-light" id="texto_img_principal"></h2>
+    </div>
+  </div>
+
+<!--container da sessão SOBRE-->
+  <div id="sobre">
+    <div id="container_sobre">
+      <div id="container_sobre_txt">
+        <p id="texto_sobre">Aguarde...</p>
+      </div>
+      <div id="img_sobre" class="img-container-sobre">
+        <img src="img/img_sobre.jpg" alt="Sobre a Like Home">
+      </div>
+    </div>
+    <h3 id="subtitulo_sobre" class="titillium-web-light">Aguarde...</h3> 
+  </div>
+ 
+<!--container da sessão VANTAGENS-->
+<div id="vantagens">
+  <h1>Vantagens</h1>
+  <div id="parte-vantagens">
+       <div id="unidade-vantagem">
+      <div id="icon-vantagem">asdasd</div>
+      <div id="subtitulo-vantagem-1">asdasdasdasdasdasd</div>
+      <div id="txt-vantagem-1">asdhajskhdjkashdasjdhhajshkdajsh</div>
+    </div>
+
+    <div id="unidade-vantagem">
+      <div id="icon-vantagem">asdasd</div>
+      <div id="subtitulo-vantagem-1">asdasdasdasdasdasd</div>
+      <div id="txt-vantagem-1">asdhajskhdjkashdasjdhhajshkdajsh</div>
+    </div>
+
+    <div id="unidade-vantagem">
+      <div id="icon-vantagem">asdasd</div>
+      <div id="subtitulo-vantagem-1">asdasdasdasdasdasd</div>
+      <div id="txt-vantagem-1">asdhajskhdjkashdasjdhhajshkdajsh</div>
+    </div>
+
+    <div id="unidade-vantagem">
+      <div id="icon-vantagem">asdasd</div>
+      <div id="subtitulo-vantagem-1">asdasdasdasdasdasd</div>
+      <div id="txt-vantagem-1">asdhajskhdjkashdasjdhhajshkdajsh</div>
+    </div>
+
+    <div id="unidade-vantagem">
+      <div id="icon-vantagem">asdasd</div>
+      <div id="subtitulo-vantagem-1">asdasdasdasdasdasd</div>
+      <div id="txt-vantagem-1">asdhajskhdjkashdasjdhhajshkdajsh</div>
+    </div>
+
+    <div id="unidade-vantagem">
+      <div id="icon-vantagem">asdasd</div>
+      <div id="subtitulo-vantagem-1">asdasdasdasdasdasd</div>
+      <div id="txt-vantagem-1">asdhajskhdjkashdasjdhhajshkdajsh</div>
+    </div>
+  </div>
+  <div id="parte-acesso-plataforma">
+    <p>aqui vão texto e imagem sobre acesso a plataforma do cliente</p>
+  </div>
+  <div id="parte-nossos-numeros">
+    <p>aqui vão texto e imagem sobre nossos números</p>
+  </div>
+  
+</div>  
+
+<!--container da sessão SERVIÇOS--> 
+<div id="serviços">
+  <h1>Nossos serviços</h1>
+  <p>aqui vão os serviços</p>
+</div>  
+
+<!--container da sessão QUERO RENTABILIZAR--> 
+<div id="rentabilizar">
+  <h1>Quero rentabilizar</h1>
+  <p>aqui vai o formulário de cadastro de propriedade</p>
+</div> 
+
+  </main>
+
+  <footer>
+    <p>Rodapé</p>
+  </footer>
+
+  <script>
+    const API_URL = "https://script.google.com/macros/s/AKfycbybvCUTr2jfwFrYiVERTsJKXOvP_1XOI0Uay7YcygCip9G4mEVfo90BiH7SBu-cxI76/exec";
+
+    fetch(API_URL)
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('texto_img_principal').innerText = data.texto_img_principal || 'Sem texto';
+        document.getElementById('texto_sobre').innerText = data.texto_sobre || 'Sem conteúdo';
+        document.getElementById('subtitulo_sobre').innerText = data.subtitulo_sobre || 'Sem subtitulo_sobre'; 
+
+       
+       // if (data.img_principal) {
+        //  document.getElementById('img_principal').src = data.img_principal;
+       // }
+   
+      })
+      .catch(error => {
+        console.error('Erro ao carregar dados:', error);
+      });
+
+  // Adiciona a classe "loaded" ao body após o carregamento completo
+  window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+  });
+  </script>
+</body>
+</html>
