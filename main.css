@@ -124,7 +124,8 @@ body.loaded #img_principal {
   display: table-cell;
   vertical-align: middle;
   padding-top: 5%;
-  padding-left: 10px;
+  padding-left: 30px;
+  padding-right: 10px;
   font-size: 1.2rem;
 }
 
@@ -140,6 +141,7 @@ body.loaded #img_principal {
   padding-top: 10px;
   color: #9f5c39;
 }
+
 .img-container-sobre {
   width: 100%;
   max-width: 600px; /* limite opcional de largura */
@@ -154,20 +156,120 @@ body.loaded #img_principal {
   object-fit: cover;
   display: block;
 }
+#vantagens{
+ background-color: #eceae6;
+}
+
+.tit-vantangem{
+  padding-top: 30px;
+  padding-left: 30px;
+  padding-bottom: 20px;
+}
+
+.subtit_vantagem{
+  text-align: center;
+}
 
 #parte-vantagens{
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  background-color: #eceae6;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
 }
 
 #unidade-vantagem{
-  width: calc(33.33% - 2px);  /* 3 colunas */
-  margin: 1px;                /* Adiciona um espaço entre as colunas e linhas */
+  width: 28%;
+  margin: 3px;                /* Adiciona um espaço entre as colunas e linhas */
   padding: 10px;
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
+}
+
+#icon-vantagem{
+  text-align: center;
+}
+
+#parte-acesso-plataforma{
+  display: flex;
+  align-items: center; /* Alinha verticalmente */
+  justify-content: center; /* Opcional: alinha horizontalmente */
+  gap: 2rem; /* Espaço entre imagem e texto */
+  flex-wrap: wrap; /* Garante responsividade */
+  flex-direction: row;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #ffff;
+}
+
+#container-imgs-acesso {
+  position: relative;
+  width: 40%;
+  max-width: 600px;
+  min-width: 280px;
+}
+
+#img-acesso-fundo {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
+#img-acesso-pc {
+  position: absolute;
+  top: 50%;
+  right: -15%; /* Faz a imagem "vazar" para a direita */
+  transform: translateY(-50%);
+  width: 40%;
+  max-width: 200px;
+  z-index: 1;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  #container-imgs-acesso {
+    width: 80%;
+  }
+
+  #img-acesso-pc {
+    width: 50%;
+    right: -10%;
+  }
+}
+
+@media (max-width: 480px) {
+  #container-imgs-acesso {
+    width: 95%;
+  }
+
+  #img-acesso-pc {
+    width: 60%;
+    right: -8%;
+  }
+}
+
+#container-texto-acesso{
+  margin-left: 10%;
+  flex: 1; /* Ocupa o espaço restante */
+  min-width: 250px; /* Previne quebra em telas pequenas */
+}
+
+#subtitulo_acesso{
+  font-size: xx-large;
+  text-align: center;
+}
+
+#txt_acesso{
+  font-size: large;
+  text-align: center;
+}
+
+#parte-nossos-numeros{
+  background-image: url('img/img-fundo-numeros.jpg');
+  background-size: cover;
+  background-position: center;
 }
 
 #rentabilizar{
