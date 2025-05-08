@@ -361,10 +361,24 @@ body.loaded #img_principal {
 #container_itens_nossos_numeros{
   display: flex;
   flex-direction: row;
+  align-items: center; /* Alinha verticalmente */
+  justify-content: center; /* Opcional: alinha horizontalmente */
+  gap: 2rem; /* Espaço entre imagem e texto */
+  flex-wrap: wrap; /* Garante responsividade */
   background-color: rgba(255, 255, 255, 0.3); /* fundo branco com 30% de transparência */
   border-top-right-radius: 15px; /* cantos superiores e inferiores direitos arredondados */
   border-bottom-right-radius: 15px;
   width: 70%; 
+  padding: 3%;
+  text-align: center;
+}
+
+.icon-numeros{
+  height: 80px;
+}
+
+.txt-numeros{
+  padding: 5%;
 }
 
 
