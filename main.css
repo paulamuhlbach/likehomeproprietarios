@@ -397,6 +397,11 @@ body.loaded #img_principal {
 .txt-numeros{
   padding: 5%;
 }
+
+#serviços{
+  width: 100%;
+}
+
 #titulo_servicos {
   text-align: right;
   text-transform: uppercase;
@@ -406,43 +411,55 @@ body.loaded #img_principal {
 #container_servicos {
   display: flex;
   flex-direction: row;
-  align-items: center;         /* Alinha verticalmente */
-  justify-content: space-between;
+  align-items: center;
+  justify-content: space-between; /* já ajuda, mas vamos ajustar melhor */
   gap: 20px;
-  width: 100%;
 }
 
 #descricao_servicos {
-  flex: 0 0 auto;             
-  text-align: left;
-  align-items: center; /* Alinha verticalmente */
+  flex: 1;            
 }
 
-.item_servico{
+.item_servico {
   display: flex;
   flex-direction: column;
-  align-items: left; /* Alinha verticalmente */
+  align-items: flex-start; /* "left" não é válido aqui */
+  padding-left: 15%;
+  position: relative; /* Necessário para a linha no bottom */
+  padding-bottom: 6px; /* Espaço para a linha */
+}
+
+.item_servico::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 85%;
+  height: 4px;
+  background-color: black;
+  margin-left: 15%;
 }
 
 #foto_servicos {
-  flex: 0 0 auto;              /* Mantém largura natural e alinha à direita */
-  text-align: right;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: flex-end; /* alinhamento à direita */
+  width: 300px;
 }
 
 
 #foto_servicos img {
-  width: 50%;
+  max-width: 100%;
   height: auto;
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
   display: block;
 }
-
 /* Responsividade para telas menores */@media (max-width: 780px) {
   #titulo_servicos {
-    text-align: center;
+    text-align: left;
     text-transform: uppercase;
-    padding: 2%;
+    padding: 5%;
   }
 
   #container_servicos {
@@ -465,6 +482,10 @@ body.loaded #img_principal {
 
   #descricao_servicos {
     width: 100%;
+  }
+
+  .item_servico{
+    padding-left: 5%;
   }
 }
 
