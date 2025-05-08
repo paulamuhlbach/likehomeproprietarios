@@ -43,6 +43,34 @@ nav {
   cursor: pointer;
 }
 
+/* Ajustes para responsividade do header */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    text-align: center;
+  }
+
+  #logo {
+    margin: 0;
+    margin-bottom: 10px;
+  }
+
+  nav {
+    margin: 0;
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .menu li {
+    font-size: 1rem;
+  }
+}
+
 main {
   padding: 0px;
 }
@@ -60,7 +88,7 @@ main {
   object-fit: cover;
   transform: scale(1);
   transition: transform 2s ease;
-  transform-origin: center bottom;
+  transform-origin: center center;
   display: block;
 }
 
@@ -90,6 +118,7 @@ main {
   z-index: 1;
   margin: 0.5rem 0;
   max-width: 90%;
+  text-transform: uppercase;
 }
 
 /* Responsivo para telas menores */
@@ -120,19 +149,21 @@ body.loaded #img_principal {
   padding-bottom: 20px;
 }
 
-#container_sobre_txt{
-  display: table-cell;
-  vertical-align: middle;
-  padding-top: 5%;
-  padding-left: 30px;
-  padding-right: 10px;
-  font-size: 1.2rem;
+#container_sobre_txt {
+  flex: 1 1 300px;
+  padding: 10px;
+  font-size: 1.1rem;
+  
 }
 
-#container_sobre{
+#container_sobre {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  flex-wrap: wrap; /* permite quebra em telas pequenas */
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* espaço entre imagem e texto */
+  padding: 20px;
 }
 
 #subtitulo_sobre{
@@ -143,9 +174,9 @@ body.loaded #img_principal {
 }
 
 .img-container-sobre {
-  width: 100%;
-  max-width: 600px; /* limite opcional de largura */
-  aspect-ratio: 16 / 9; /* mantém proporção responsiva (pode ajustar) */
+  flex: 1 1 300px;
+  max-width: 600px;
+  aspect-ratio: 16 / 9;
   border-radius: 15px;
   overflow: hidden;
 }
@@ -156,33 +187,60 @@ body.loaded #img_principal {
   object-fit: cover;
   display: block;
 }
+
+/* Adapta o layout em telas menores */
+@media (max-width: 768px) {
+  #container_sobre {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #container_sobre_txt {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
 #vantagens{
  background-color: #eceae6;
 }
 
 .tit-vantangem{
-  padding-top: 30px;
-  padding-left: 30px;
-  padding-bottom: 20px;
+  padding-top: 3%;
+  padding-left: 5%;
+  padding-bottom: 3%;
 }
 
 .subtit_vantagem{
   text-align: center;
 }
 
-#parte-vantagens{
+#parte-vantagens {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 5%;
 }
 
-#unidade-vantagem{
+#unidade-vantagem {
   width: 28%;
-  margin: 3px;                /* Adiciona um espaço entre as colunas e linhas */
+  margin: 3px;
   padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Responsivo: 2 colunas em telas menores */
+@media (max-width: 768px) {
+  #unidade-vantagem {
+    width: 48%; /* duas colunas */
+  }
+}
+
+/* Responsivo: 1 coluna em telas muito pequenas */
+@media (max-width: 480px) {
+  #unidade-vantagem {
+    width: 100%;
+  }
 }
 
 #icon-vantagem{
@@ -196,8 +254,8 @@ body.loaded #img_principal {
   gap: 2rem; /* Espaço entre imagem e texto */
   flex-wrap: wrap; /* Garante responsividade */
   flex-direction: row;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 5%;
+  padding-bottom: 5%;
   background-color: #ffff;
 }
 
@@ -266,19 +324,49 @@ body.loaded #img_principal {
   text-align: center;
 }
 
-#parte-nossos-numeros{
+#parte-nossos-numeros {
+  position: relative;
   background-image: url('img/img-fundo-numeros.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: top center; /* garante que a imagem seja exibida do topo para baixo */
+  width: 100%; /* ou defina o tamanho desejado para a div */
+  height: 100%; /* ou defina a altura da div */
 }
 
-#subtitulo_numeros h2 {
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
+#parte-nossos-numeros::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.5); /* transparência desejada sobre a imagem */
+  z-index: 0; /* garante que fique atrás do conteúdo da div */
+}
+
+#parte-nossos-numeros > * {
+  position: relative;
+  z-index: 1; /* garante que o conteúdo fique acima da camada de transparência */
+}
+
+#subtitulo_numeros {
   position: relative;
   z-index: 1;
   margin: 0.5rem 0;
   max-width: 90%;
+  text-transform: uppercase;
+  padding: 5%;
 }
+
+#container_itens_nossos_numeros{
+  display: flex;
+  flex-direction: row;
+  background-color: rgba(255, 255, 255, 0.3); /* fundo branco com 30% de transparência */
+  border-top-right-radius: 15px; /* cantos superiores e inferiores direitos arredondados */
+  border-bottom-right-radius: 15px;
+  width: 70%; 
+}
+
 
 #rentabilizar{
   background-image: url('img/img-quero-rentabilizar-back.jpg');
