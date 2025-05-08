@@ -118,7 +118,6 @@ main {
   z-index: 1;
   margin: 0.5rem 0;
   max-width: 90%;
-  text-transform: uppercase;
 }
 
 /* Responsivo para telas menores */
@@ -363,7 +362,7 @@ body.loaded #img_principal {
   display: flex;
   flex-direction: row;
   align-items: center; /* Alinha verticalmente */
-  justify-content: left; /* Opcional: alinha horizontalmente */
+  justify-content: left; 
   gap: 2rem; /* Espaço entre imagem e texto */
   flex-wrap: wrap; /* Garante responsividade */
   background-color: rgba(255, 255, 255, 0.3); /* fundo branco com 30% de transparência */
@@ -376,9 +375,9 @@ body.loaded #img_principal {
 
 @media (max-width: 1020px) {
   #container_itens_nossos_numeros {
-    width: 80%;
+    width: 90%;
     flex-direction: column;
-    flex-wrap:nowrap;
+    justify-content: center; 
   }
 }
 
@@ -386,6 +385,7 @@ body.loaded #img_principal {
   #container_itens_nossos_numeros {
     width: 100%;
     flex-direction: column;
+    justify-content: center; 
   }
 }
 
