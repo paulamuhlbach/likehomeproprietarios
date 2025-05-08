@@ -207,6 +207,7 @@ body.loaded #img_principal {
   padding-top: 3%;
   padding-left: 5%;
   padding-bottom: 3%;
+  text-transform: uppercase;
 }
 
 .subtit_vantagem{
@@ -412,8 +413,15 @@ body.loaded #img_principal {
 }
 
 #descricao_servicos {
-  flex: 0 0 auto;              /* Mantém largura natural e alinha à esquerda */
+  flex: 0 0 auto;             
   text-align: left;
+  align-items: center; /* Alinha verticalmente */
+}
+
+.item_servico{
+  display: flex;
+  flex-direction: column;
+  align-items: left; /* Alinha verticalmente */
 }
 
 #foto_servicos {
@@ -430,9 +438,15 @@ body.loaded #img_principal {
   display: block;
 }
 
-/* Responsividade para telas menores */@media (max-width: 600px) {
+/* Responsividade para telas menores */@media (max-width: 780px) {
+  #titulo_servicos {
+    text-align: center;
+    text-transform: uppercase;
+    padding: 2%;
+  }
+
   #container_servicos {
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
     text-align: center;
   }
