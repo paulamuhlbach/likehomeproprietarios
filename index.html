@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Like Home Proprietários</title>
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="main.css">
 </head>
 <body>
@@ -95,7 +96,9 @@
   </div>
 
   <div id="parte-nossos-numeros">
-    <div id="subtitulo_nossos_numeros"></div>
+    <div>
+      <h2 class="titillium-web-light" id="subtitulo_numeros"></h2>
+    </div>
     <div id="container_itens_nossos_numeros">
       <div id="col_01">
         <div id="container-item01">
@@ -104,7 +107,7 @@
         </div>
         <div id="container-item02">
           <div id="icon"><img src="img/icons/item_02.svg" id="Item 02"></div>
-          <div id="txt_item_02">asda</div>
+          <div id="txt_item_02"></div>
         </div>
       </div>
       <div id="col_02">
@@ -169,15 +172,14 @@
         document.getElementById('txt_vantagem_06').innerText = data.txt_vantagem_06 || 'Sem txt_vantagem_06';
         document.getElementById('subtitulo_acesso').innerText = data.subtitulo_acesso || 'Sem subtitulo_acesso';  
         document.getElementById('txt_acesso').innerText = data.txt_acesso || 'Sem txt_acesso';
+        document.getElementById('subtitulo_numeros').innerText = data.subtitulo_numeros || 'Sem subtitulo_numeros';
         document.getElementById('txt_item_01').innerText = data.txt_item_01 || 'Sem txt_item_01';
-        document.getElementById('txt_item_01').innerText = data.txt_item_01 || 'Sem txt_item_02';
-        document.getElementById('txt_item_01').innerText = data.txt_item_01 || 'Sem txt_item_03';
-        document.getElementById('txt_item_01').innerText = data.txt_item_01 || 'Sem txt_item_04';
-        document.getElementById('txt_item_01').innerText = data.txt_item_01 || 'Sem txt_item_05';
+        document.getElementById('txt_item_02').innerText = data.txt_item_02 || 'Sem txt_item_02';
+        document.getElementById('txt_item_03').innerText = data.txt_item_03 || 'Sem txt_item_03';
+        document.getElementById('txt_item_04').innerText = data.txt_item_04 || 'Sem txt_item_04';
+        document.getElementById('txt_item_05').innerText = data.txt_item_05 || 'Sem txt_item_05';
         
-        
-        
-       
+      
        // if (data.img_principal) {
         //  document.getElementById('img_principal').src = data.img_principal;
        // }
@@ -187,10 +189,10 @@
         console.error('Erro ao carregar dados:', error);
       });
 
-  // Adiciona a classe "loaded" ao body após o carregamento completo
-  window.addEventListener('load', () => {
-    document.body.classList.add('loaded');
-  });
+    // Adiciona a classe "loaded" ao body após o carregamento do DOM
+    document.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('loaded');
+    });
   </script>
 </body>
 </html>

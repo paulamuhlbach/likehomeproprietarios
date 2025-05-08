@@ -272,6 +272,14 @@ body.loaded #img_principal {
   background-position: center;
 }
 
+#subtitulo_numeros h2 {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  position: relative;
+  z-index: 1;
+  margin: 0.5rem 0;
+  max-width: 90%;
+}
+
 #rentabilizar{
   background-image: url('img/img-quero-rentabilizar-back.jpg');
 }
