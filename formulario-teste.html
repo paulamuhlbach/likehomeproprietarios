@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Formulário LikeHome</title>
+  <link rel="stylesheet" href="mainForm.css" />
+</head>
+<body>
+  <div class="form-container">
+    <h1>Formulário LikeHome</h1>
+    <form>
+      <fieldset>
+        <legend>1. Dados do Proprietário</legend>
+        <label>Nome completo: <input type="text" name="nome" required></label>
+        <label>E-mail: <input type="email" name="email" required></label>
+        <label>Telefone (WhatsApp): <input type="tel" name="telefone" required></label>
+        <label>Cidade e Estado: <input type="text" name="cidade_estado" required></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>2. Sobre o Imóvel</legend>
+        <label>Endereço completo (opcional): <input type="text" name="endereco"></label>
+        <label>Situação atual do imóvel: <input type="text" name="situacao"></label>
+        <label>Área total (m²): <input type="number" name="area" min="0"></label>
+        <label>Vagas de garagem: <input type="number" name="vagas" min="0"></label>
+        <label>Tipo de imóvel: <input type="text" name="tipo"></label>
+        <label>Quartos: <input type="number" name="quartos" min="0"></label>
+        <label>Banheiros: <input type="number" name="banheiros" min="0"></label>
+        <label>Outros: <textarea name="outros" rows="3"></textarea></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>3. Objetivo com a LikeHome</legend>
+        <label><input type="checkbox" name="objetivo" value="locacao"> Desejo rentabilizar com locação temporária</label>
+        <label><input type="checkbox" name="objetivo" value="alugar_vender"> Quero alugar enquanto vendo</label>
+        <label><input type="checkbox" name="objetivo" value="mobiliado"> Imóvel mobiliado</label>
+        <label><input type="checkbox" name="objetivo" value="vazio"> Imóvel vazio</label>
+        <label><input type="checkbox" name="objetivo" value="parado"> À venda e parado</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>4. Já tem anúncio em alguma plataforma?</legend>
+        <label><input type="radio" name="anuncio" value="sim"> Sim</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="plataforma" value="booking"> Booking</label>
+          <label><input type="checkbox" name="plataforma" value="airbnb"> Airbnb</label>
+          <label><input type="checkbox" name="plataforma" value="outra"> Outra</label>
+        </div>
+        <label><input type="radio" name="anuncio" value="nao"> Não</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>5. Como conheceu a LikeHome?</legend>
+        <label><input type="radio" name="origem" value="instagram"> Instagram</label>
+        <label><input type="radio" name="origem" value="indicacao"> Indicação</label>
+        <label><input type="radio" name="origem" value="anuncio"> Anúncio Online</label>
+        <label><input type="radio" name="origem" value="outro"> Outro</label>
+      </fieldset>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+</body>
+</html>
