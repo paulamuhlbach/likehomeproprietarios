@@ -405,7 +405,9 @@ body.loaded #img_principal {
 #titulo_servicos {
   text-align: right;
   text-transform: uppercase;
-  padding: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 2%;
 }
 
 #container_servicos {
@@ -417,7 +419,8 @@ body.loaded #img_principal {
 }
 
 #descricao_servicos {
-  flex: 1;            
+  width: 50%;
+  text-align: left;           
 }
 
 .item_servico {
@@ -444,7 +447,7 @@ body.loaded #img_principal {
   flex-shrink: 0;
   display: flex;
   justify-content: flex-end; /* alinhamento à direita */
-  width: 300px;
+  width: 400px;
 }
 
 
@@ -493,6 +496,8 @@ body.loaded #img_principal {
 
 #rentabilizar{
   background-image: url('img/img-quero-rentabilizar-back.jpg');
+  padding-top: 5%;
+  margin-top: 5%;
 }
 footer {
   background-color: #eee;
