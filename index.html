@@ -165,9 +165,64 @@
 
 <!--container da sessão QUERO RENTABILIZAR--> 
 <div id="rentabilizar">
-  <h1>Quero rentabilizar</h1>
+  <div id="subtitulo_formulario"></div>
+ <div class="form-container">
+    <form>
+      <fieldset>
+        <legend>Dados do Proprietário</legend>
+        <label>Nome completo: <input type="text" name="nome" required></label>
+        <label>E-mail: <input type="email" name="email" required></label>
+        <label>Telefone (WhatsApp): <input type="tel" name="telefone" required></label>
+        <label>Cidade e Estado: <input type="text" name="cidade_estado" required></label>
+      </fieldset>
 
-  <p>aqui vai o formulário de cadastro de propriedade</p>
+      <fieldset>
+        <legend>Sobre o Imóvel</legend>
+        <label>Endereço completo (opcional): <input type="text" name="endereco"></label>
+        <label>Situação atual do imóvel: <input type="text" name="situacao"></label>
+        <label>Área total (m²): <input type="number" name="area" min="0"></label>
+        <label>Vagas de garagem: <input type="number" name="vagas" min="0"></label>
+        <label>Tipo de imóvel: <input type="text" name="tipo"></label>
+        <label>Quartos: <input type="number" name="quartos" min="0"></label>
+        <label>Banheiros: <input type="number" name="banheiros" min="0"></label>
+        <label>Outros: <textarea name="outros" rows="3"></textarea></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Objetivo com a LikeHome</legend>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="objetivo" value="locacao" id="locacao"> Desejo rentabilizar com locação temporária</label>
+          <label><input type="checkbox" name="objetivo" value="alugar_vender" id="alugar_vender"> Alugar enquanto vendo</label>
+          <label><input type="checkbox" name="objetivo" value="mobiliado" id="mobiliado"> Imóvel mobiliado</label>
+          <label><input type="checkbox" name="objetivo" value="vazio" id="vazio"> Imóvel vazio</label>
+          <label><input type="checkbox" name="objetivo" value="parado" id="parado"> À venda e parado</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Já tem anúncio em alguma plataforma?</legend>
+        <label><input type="radio" name="anuncio" value="sim"> Sim</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="plataforma" value="booking"> Booking</label>
+          <label><input type="checkbox" name="plataforma" value="airbnb"> Airbnb</label>
+          <label><input type="checkbox" name="plataforma" value="outra"> Outra</label>
+        </div>
+        <label><input type="radio" name="anuncio" value="nao"> Não</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Como conheceu a LikeHome?</legend>
+        <div class="radio-group">
+          <label><input type="radio" name="origem" value="instagram" id="instagram"> Instagram</label>
+          <label><input type="radio" name="origem" value="indicacao" id="indicacao"> Indicação</label>
+          <label><input type="radio" name="origem" value="anuncio" id="anuncio_online"> Anúncio Online</label>
+          <label><input type="radio" name="origem" value="outro" id="outro"> Outro</label>
+        </div>
+      </fieldset>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
 </div> 
 
   </main>
@@ -217,6 +272,7 @@
         document.getElementById('txt_servicos03').innerText = data.txt_servicos03 || 'Sem txt_servicos03';
         document.getElementById('txt_servicos04').innerText = data.txt_servicos04 || 'Sem txt_servicos04';
         document.getElementById('txt_servicos05').innerText = data.txt_servicos05 || 'Sem txt_servicos05';
+        document.getElementById('subtitulo_formulario').innerText = data.subtitulo_formulario || 'Sem subtitulo_formulario';
         
       
        // if (data.img_principal) {

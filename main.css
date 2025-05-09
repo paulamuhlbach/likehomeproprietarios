@@ -510,11 +510,170 @@ body.loaded #img_principal {
 
 
 
-#rentabilizar{
+#rentabilizar {
   background-image: url('img/img-quero-rentabilizar-back.jpg');
   padding-top: 5%;
   margin-top: 5%;
+  display: flex;
+  flex-direction: row;
+  color: #f4f4f4;
+  justify-content: space-between;
+  align-items: center; /* Alinha verticalmente os filhos */
 }
+
+#subtitulo_formulario {
+  font-size: xx-large;
+  width: 25%;
+  text-align: left;
+}
+
+.form-container {
+  width: 50%;
+  margin-left: auto; /* Alinha à direita */
+  background: rgba(0, 0, 0, 0.8); 
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+form fieldset {
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+legend {
+  font-weight: bold;
+  padding: 0 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 12px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 4px;
+  box-sizing: border-box;
+  border: 1px solid #fff;        /* contorno branco */
+  border-radius: 4px;
+  background-color: transparent; /* fundo transparente */
+  color: #fff;                   /* texto branco */
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #ccc; /* cor de placeholder mais clara */
+}
+
+
+.checkbox-group {
+  margin-left: 20px;
+  margin-bottom: 12px;
+}
+
+/* Agrupamento de checkboxes ou radios em linha com quebra */
+.checkbox-group,
+.radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px; /* espaço entre os itens */
+  margin-bottom: 16px;
+}
+
+.checkbox-group label,
+.radio-group label,
+fieldset label {
+  flex: 1 1 auto; /* permite ajustar a largura e quebrar se necessário */
+  white-space: nowrap;
+}
+
+/* Esconde os checkboxes e radios padrão */
+input[type="checkbox"],
+input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: transparent;
+  margin: 0 8px 0 0;
+  font: inherit;
+  color: white;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  display: inline-grid;
+  place-content: center;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+/* Radio específico: arredondado */
+input[type="radio"] {
+  border-radius: 50%;
+}
+
+/* Marcado: preenchimento branco */
+input[type="checkbox"]:checked,
+input[type="radio"]:checked {
+  background-color: #fff;
+  border-color: #fff;
+}
+
+/* Marca interna (✓ ou bolinha para radio) */
+input[type="checkbox"]:checked::before {
+  content: "✓";
+  color: #000;
+  font-size: 16px;
+  line-height: 1;
+  text-align: center;
+}
+
+input[type="radio"]:checked::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: #000;
+  border-radius: 50%;
+  display: block;
+  margin: auto;
+}
+
+/* Ajustes para o label que acompanha */
+label {
+  color: #f4f4f4;
+  font-size: 16px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+button {
+  background-color: #000000;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #303030;
+}
+
+
 footer {
   background-color: #eee;
   text-align: center;
