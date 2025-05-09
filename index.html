@@ -180,11 +180,44 @@
         <legend>Sobre o Imóvel</legend>
         <label>Endereço completo (opcional): <input type="text" name="endereco"></label>
         <label>Situação atual do imóvel: <input type="text" name="situacao"></label>
-        <label>Área total (m²): <input type="number" name="area" min="0"></label>
-        <label>Vagas de garagem: <input type="number" name="vagas" min="0"></label>
-        <label>Tipo de imóvel: <input type="text" name="tipo"></label>
-        <label>Quartos: <input type="number" name="quartos" min="0"></label>
-        <label>Banheiros: <input type="number" name="banheiros" min="0"></label>
+        <div class="grid-campos">
+          <label for="area">Área total (m²):
+            <input type="number" name="area" id="area" min="0">
+          </label>
+
+          <label for="vagas">Vagas de garagem:
+            <input type="number" name="vagas" id="vagas" min="0">
+          </label>
+
+          <label for="tipo_imovel">Tipo de imóvel:
+            <select name="tipo" id="tipo_imovel">
+              <option value="">Selecione...</option>
+              <option value="Apartamento">Apartamento</option>
+              <option value="Apartamento de Cobertura">Apartamento de Cobertura</option>
+              <option value="Apartamento Duplex">Apartamento Duplex</option>
+              <option value="Apartamento Garden">Apartamento Garden</option>
+              <option value="Bangalô">Bangalô</option>
+              <option value="Casa">Casa</option>
+              <option value="Casa Geminada">Casa Geminada</option>
+              <option value="Edícula">Edícula</option>
+              <option value="Flat">Flat</option>
+              <option value="Kitnet">Kitnet</option>
+              <option value="Loft">Loft</option>
+              <option value="Mansão">Mansão</option>
+              <option value="Sobrado">Sobrado</option>
+              <option value="Studio">Studio</option>
+            </select>
+          </label>
+
+          <label for="quartos">Quartos:
+            <input type="number" name="quartos" id="quartos" min="0">
+          </label>
+
+          <label for="banheiros">Banheiros:
+            <input type="number" name="banheiros" id="banheiros" min="0">
+          </label>
+        </div>
+
         <label>Outros: <textarea name="outros" rows="3"></textarea></label>
       </fieldset>
 
@@ -201,13 +234,17 @@
 
       <fieldset>
         <legend>Já tem anúncio em alguma plataforma?</legend>
-        <label><input type="radio" name="anuncio" value="sim"> Sim</label>
-        <div class="checkbox-group">
-          <label><input type="checkbox" name="plataforma" value="booking"> Booking</label>
-          <label><input type="checkbox" name="plataforma" value="airbnb"> Airbnb</label>
-          <label><input type="checkbox" name="plataforma" value="outra"> Outra</label>
+        
+        <div class="radio-inline-group">
+          <label><input type="radio" name="anuncio" value="sim" id="anuncio_sim"> Sim</label>
+          <label><input type="radio" name="anuncio" value="nao" id="anuncio_nao"> Não</label>
         </div>
-        <label><input type="radio" name="anuncio" value="nao"> Não</label>
+        
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="plataforma" value="booking" id="booking"> Booking</label>
+          <label><input type="checkbox" name="plataforma" value="airbnb" id="airbnb"> Airbnb</label>
+          <label><input type="checkbox" name="plataforma" value="outra" id="outra"> Outra</label>
+        </div>
       </fieldset>
 
       <fieldset>
