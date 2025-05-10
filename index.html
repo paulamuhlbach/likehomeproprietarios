@@ -178,17 +178,16 @@
 
       <fieldset>
         <legend>Sobre o Imóvel</legend>
-        <label>Endereço completo (opcional): <input type="text" name="endereco"></label>
-        <label>Situação atual do imóvel: <input type="text" name="situacao"></label>
+
+        <label for="endereco">Endereço completo (opcional):
+          <input type="text" name="endereco" id="endereco">
+        </label>
+
+        <label for="situacao">Situação atual do imóvel:
+          <input type="text" name="situacao" id="situacao">
+        </label>
+
         <div class="grid-campos">
-          <label for="area">Área total (m²):
-            <input type="number" name="area" id="area" min="0">
-          </label>
-
-          <label for="vagas">Vagas de garagem:
-            <input type="number" name="vagas" id="vagas" min="0">
-          </label>
-
           <label for="tipo_imovel">Tipo de imóvel:
             <select name="tipo" id="tipo_imovel">
               <option value="">Selecione...</option>
@@ -209,6 +208,14 @@
             </select>
           </label>
 
+          <label for="area">Área total (m²):
+            <input type="number" name="area" id="area" min="0">
+          </label>
+
+          <label for="vagas">Vagas de garagem:
+            <input type="number" name="vagas" id="vagas" min="0">
+          </label>
+
           <label for="quartos">Quartos:
             <input type="number" name="quartos" id="quartos" min="0">
           </label>
@@ -216,31 +223,23 @@
           <label for="banheiros">Banheiros:
             <input type="number" name="banheiros" id="banheiros" min="0">
           </label>
-        </div>
 
-        <label>Outros: <textarea name="outros" rows="3"></textarea></label>
-      </fieldset>
-
-      <fieldset>
-        <legend>Objetivo com a LikeHome</legend>
-        <div class="checkbox-group">
-          <label><input type="checkbox" name="objetivo" value="locacao" id="locacao"> Desejo rentabilizar com locação temporária</label>
-          <label><input type="checkbox" name="objetivo" value="alugar_vender" id="alugar_vender"> Alugar enquanto vendo</label>
-          <label><input type="checkbox" name="objetivo" value="mobiliado" id="mobiliado"> Imóvel mobiliado</label>
-          <label><input type="checkbox" name="objetivo" value="vazio" id="vazio"> Imóvel vazio</label>
-          <label><input type="checkbox" name="objetivo" value="parado" id="parado"> À venda e parado</label>
+          <label for="outros">Outros:
+            <textarea name="outros" id="outros" rows="3"></textarea>
+          </label>
         </div>
       </fieldset>
+
 
       <fieldset>
         <legend>Já tem anúncio em alguma plataforma?</legend>
-        
+
         <div class="radio-inline-group">
-          <label><input type="radio" name="anuncio" value="sim" id="anuncio_sim"> Sim</label>
           <label><input type="radio" name="anuncio" value="nao" id="anuncio_nao"> Não</label>
+          <label><input type="radio" name="anuncio" value="sim" id="anuncio_sim"> Sim</label>
         </div>
-        
-        <div class="checkbox-group">
+
+        <div class="checkbox-group" id="plataformas_group" style="display: none;">
           <label><input type="checkbox" name="plataforma" value="booking" id="booking"> Booking</label>
           <label><input type="checkbox" name="plataforma" value="airbnb" id="airbnb"> Airbnb</label>
           <label><input type="checkbox" name="plataforma" value="outra" id="outra"> Outra</label>
@@ -257,7 +256,7 @@
         </div>
       </fieldset>
 
-      <button type="submit">Enviar</button>
+      <button type="submit">Quero rentabilizar</button>
     </form>
   </div>
 </div> 
@@ -325,6 +324,25 @@
     document.addEventListener('DOMContentLoaded', () => {
       document.body.classList.add('loaded');
     });
+
+    // validações do formulário 
+      const simRadio = document.getElementById('anuncio_sim');
+      const naoRadio = document.getElementById('anuncio_nao');
+      const checkboxGroup = document.getElementById('plataformas_group');
+
+      function toggleCheckboxGroup() {
+        if (simRadio.checked) {
+          checkboxGroup.style.display = 'flex';
+        } else {
+          checkboxGroup.style.display = 'none';
+        }
+      }
+
+      simRadio.addEventListener('change', toggleCheckboxGroup);
+      naoRadio.addEventListener('change', toggleCheckboxGroup);
+
+      // Executa no carregamento da página
+      toggleCheckboxGroup();
   </script>
 </body>
 </html>

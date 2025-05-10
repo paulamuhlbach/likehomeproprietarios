@@ -694,9 +694,8 @@ select option {
 
 .grid-campos {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 20px;
-  margin-bottom: 20px;
 }
 
 .grid-campos label {
@@ -704,6 +703,39 @@ select option {
   flex-direction: column;
 }
 
+/* Ajustes visuais */
+.grid-campos input,
+.grid-campos select,
+.grid-campos textarea {
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+
+.grid-campos textarea[name="outros"] {
+  width: 100%;
+  height: 100%;
+  resize: vertical;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 8px;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Estiliza o label do textarea */
+.grid-campos label:has(textarea[name="outros"]) {
+  grid-column: span 1; /* ou simplesmente remova essa regra */
+}
+
+.grid-campos textarea[name="outros"] {
+  height: 35px; /* igual ao dos inputs */
+  resize: none; /* impede redimensionamento manual */
+}
 
 button {
   background-color: #000000;
