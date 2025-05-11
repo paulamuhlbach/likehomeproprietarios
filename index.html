@@ -163,103 +163,139 @@
   
 </div>  
 
-<!--container da sessão QUERO RENTABILIZAR--> 
+  <!--container da sessão QUERO RENTABILIZAR-->
 <div id="rentabilizar">
-  <div id="subtitulo_formulario"></div>
- <div class="form-container">
-    <form>
-      <fieldset>
-        <legend>Dados do Proprietário</legend>
-        <label>Nome completo: <input type="text" name="nome" required></label>
-        <label>E-mail: <input type="email" name="email" required></label>
-        <label>Telefone (WhatsApp): <input type="tel" name="telefone" required></label>
-        <label>Cidade e Estado: <input type="text" name="cidade_estado" required></label>
-      </fieldset>
+    <div id="subtitulo_formulario">
+      <h2>Quero Rentabilizar</h2>
+      <p>Preencha o formulário e entraremos em contato para ajudar a rentabilizar seu imóvel.</p>
+    </div>
 
-      <fieldset>
-        <legend>Sobre o Imóvel</legend>
+    <div class="form-container">
+      <form>
+        <fieldset>
+          <legend>Dados do Proprietário</legend>
 
-        <label for="endereco">Endereço completo (opcional):
-          <input type="text" name="endereco" id="endereco">
-        </label>
+          <div class="dupla">
+            <label>
+              <span>Nome completo:</span>
+              <input type="text" name="nome" placeholder="Nome completo" required>
+            </label>
+            <label>
+              <span>E-mail:</span>
+              <input type="email" name="email" placeholder="E-mail" required>
+            </label>
+          </div>
 
-        <label for="situacao">Situação atual do imóvel:
-          <input type="text" name="situacao" id="situacao">
-        </label>
+          <div class="dupla">
+            <label>
+              <span>Telefone (WhatsApp):</span>
+              <input type="tel" name="telefone" placeholder="Telefone (WhatsApp)" required>
+            </label>
+            <label>
+              <span>Cidade e Estado:</span>
+              <input type="text" name="cidade_estado" placeholder="Cidade e Estado" required>
+            </label>
+          </div>
+        </fieldset>
 
-        <div class="grid-campos">
-          <label for="tipo_imovel">Tipo de imóvel:
-            <select name="tipo" id="tipo_imovel">
-              <option value="">Selecione...</option>
-              <option value="Apartamento">Apartamento</option>
-              <option value="Apartamento de Cobertura">Apartamento de Cobertura</option>
-              <option value="Apartamento Duplex">Apartamento Duplex</option>
-              <option value="Apartamento Garden">Apartamento Garden</option>
-              <option value="Bangalô">Bangalô</option>
-              <option value="Casa">Casa</option>
-              <option value="Casa Geminada">Casa Geminada</option>
-              <option value="Edícula">Edícula</option>
-              <option value="Flat">Flat</option>
-              <option value="Kitnet">Kitnet</option>
-              <option value="Loft">Loft</option>
-              <option value="Mansão">Mansão</option>
-              <option value="Sobrado">Sobrado</option>
-              <option value="Studio">Studio</option>
-            </select>
-          </label>
+        <fieldset>
+          <legend>Sobre o Imóvel</legend>
 
-          <label for="area">Área total (m²):
-            <input type="number" name="area" id="area" min="0">
-          </label>
+          <div class="dupla">
+            <label>
+              <span>Endereço completo (opcional):</span>
+              <input type="text" name="endereco" placeholder="Endereço completo (opcional)">
+            </label>
+            <label>
+              <span>Situação atual:</span>
+              <input type="text" name="situacao" placeholder="Situação atual do imóvel">
+            </label>
+          </div>
 
-          <label for="vagas">Vagas de garagem:
-            <input type="number" name="vagas" id="vagas" min="0">
-          </label>
+          <div class="dupla">
+            <label>
+              <span>Tipo de imóvel:</span>
+              <select name="tipo" required>
+                <option value="">Tipo de imóvel...</option>
+                <option value="Apartamento">Apartamento</option>
+                <option value="Apartamento de Cobertura">Apartamento de Cobertura</option>
+                <option value="Apartamento Duplex">Apartamento Duplex</option>
+                <option value="Apartamento Garden">Apartamento Garden</option>
+                <option value="Bangalô">Bangalô</option>
+                <option value="Casa">Casa</option>
+                <option value="Casa Geminada">Casa Geminada</option>
+                <option value="Edícula">Edícula</option>
+                <option value="Flat">Flat</option>
+                <option value="Kitnet">Kitnet</option>
+                <option value="Loft">Loft</option>
+                <option value="Mansão">Mansão</option>
+                <option value="Sobrado">Sobrado</option>
+                <option value="Studio">Studio</option>
+              </select>
+            </label>
+            <label>
+              <span>Área total (m²):</span>
+              <input type="number" name="area" min="0" placeholder="Área total (m²)">
+            </label>
+          </div>
 
-          <label for="quartos">Quartos:
-            <input type="number" name="quartos" id="quartos" min="0">
-          </label>
+          <div class="dupla">
+            <label>
+              <span>Vagas de garagem:</span>
+              <input type="number" name="vagas" min="0" placeholder="Vagas de garagem">
+            </label>
+            <label>
+              <span>Quartos:</span>
+              <input type="number" name="quartos" min="0" placeholder="Quartos">
+            </label>
+            <label>
+              <span>Banheiros:</span>
+              <input type="number" name="banheiros" min="0" placeholder="Banheiros">
+            </label>
+          </div>
 
-          <label for="banheiros">Banheiros:
-            <input type="number" name="banheiros" id="banheiros" min="0">
-          </label>
+          <div class="dupla">
+            <label>
+              <span>Outras observações:</span>
+              <textarea name="outros" rows="3" placeholder="Outras observações"></textarea>
+            </label>
+          </div>
+        </fieldset>
 
-          <label for="outros">Outros:
-            <textarea name="outros" id="outros" rows="3"></textarea>
-          </label>
-        </div>
-      </fieldset>
+        <fieldset>
+          <legend>Já tem anúncio em alguma plataforma?</legend>
+          <div class="radio-inline-group">
+            <label>
+              <input type="radio" name="anuncio" value="nao"> Não
+            </label>
+            <label>
+              <input type="radio" name="anuncio" value="sim" onchange="document.getElementById('plataformas_group').style.display='flex';"> Sim
+            </label>
+          </div>
 
+          <div class="checkbox-group" id="plataformas_group" style="display: none;">
+            <label><input type="checkbox" name="plataforma" value="booking"> Booking</label>
+            <label><input type="checkbox" name="plataforma" value="airbnb"> Airbnb</label>
+            <label><input type="checkbox" name="plataforma" value="outra"> Outra</label>
+          </div>
+        </fieldset>
 
-      <fieldset>
-        <legend>Já tem anúncio em alguma plataforma?</legend>
+        <fieldset>
+          <legend>Como conheceu a LikeHome?</legend>
+          <div class="radio-group">
+            <label><input type="radio" name="origem" value="instagram"> Instagram</label>
+            <label><input type="radio" name="origem" value="indicacao"> Indicação</label>
+            <label><input type="radio" name="origem" value="anuncio"> Anúncio Online</label>
+            <label><input type="radio" name="origem" value="outro"> Outro</label>
+          </div>
+        </fieldset>
 
-        <div class="radio-inline-group">
-          <label><input type="radio" name="anuncio" value="nao" id="anuncio_nao"> Não</label>
-          <label><input type="radio" name="anuncio" value="sim" id="anuncio_sim"> Sim</label>
-        </div>
-
-        <div class="checkbox-group" id="plataformas_group" style="display: none;">
-          <label><input type="checkbox" name="plataforma" value="booking" id="booking"> Booking</label>
-          <label><input type="checkbox" name="plataforma" value="airbnb" id="airbnb"> Airbnb</label>
-          <label><input type="checkbox" name="plataforma" value="outra" id="outra"> Outra</label>
-        </div>
-      </fieldset>
-
-      <fieldset>
-        <legend>Como conheceu a LikeHome?</legend>
-        <div class="radio-group">
-          <label><input type="radio" name="origem" value="instagram" id="instagram"> Instagram</label>
-          <label><input type="radio" name="origem" value="indicacao" id="indicacao"> Indicação</label>
-          <label><input type="radio" name="origem" value="anuncio" id="anuncio_online"> Anúncio Online</label>
-          <label><input type="radio" name="origem" value="outro" id="outro"> Outro</label>
-        </div>
-      </fieldset>
-
-      <button type="submit">Quero rentabilizar</button>
-    </form>
+        <button type="submit">Quero rentabilizar</button>
+      </form>
+    </div>
   </div>
-</div> 
+
+
 
   </main>
 
