@@ -208,7 +208,13 @@
             </label>
             <label>
               <span>Situação atual:</span>
-              <input type="text" name="situacao" placeholder="Situação atual do imóvel">
+              <select name="situacao" required>
+                <option value="">Situação atual do imóvel...</option>
+                <option value="Imóvel mobiliado">Imóvel mobiliado</option>
+                <option value="Imóvel vazio">Imóvel vazio</option>
+                <option value="À venda e parado">À venda e parado</option>
+              </select>
+                  
             </label>
           </div>
 
@@ -257,7 +263,7 @@
           <div class="dupla">
             <label>
               <span>Outras observações:</span>
-              <textarea name="outros" rows="3" placeholder="Outras observações"></textarea>
+              <textarea name="outros" rows="3" placeholder="Outras observações" class="titillium-web-light"></textarea>
             </label>
           </div>
         </fieldset>
@@ -289,8 +295,10 @@
             <label><input type="radio" name="origem" value="outro"> Outro</label>
           </div>
         </fieldset>
-
-        <button type="submit">Quero rentabilizar</button>
+        <div class="btn-wrapper">
+          <button type="submit" class="btn-submit">QUERO RENTABILIZAR</button>
+        </div>
+        
       </form>
     </div>
   </div>
