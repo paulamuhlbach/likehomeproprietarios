@@ -474,7 +474,7 @@ body.loaded #img_principal {
   padding: 5%;
 }
 
-#serviços{
+#servicos{
   width: 100%;
 }
 
@@ -893,6 +893,35 @@ footer {
 
 #sitemap {
   font-size: 14px;
+  text-transform: uppercase;
+}
+
+#sitemap ul {
+  list-style: none;         /* remove as bolinhas */
+  padding: 0;
+  margin: 0;
+  text-align: right;        /* alinha os links à direita */
+}
+
+#sitemap li {
+  margin-bottom: 8px;       /* espaçamento entre os itens */
+}
+
+#sitemap a {
+  color: #ffffff;           /* branco puro */
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: inline-block;    /* garante comportamento de bloco para alinhamento */
+}
+
+#sitemap a:hover,
+#sitemap a:focus {
+  color: #d1d1d1;
+  text-decoration: none;
+}
+
+#sitemap a:visited {
+  color: #ffffff;
 }
 
 /* Font Weights Utilitários */
@@ -1017,5 +1046,12 @@ footer {
   /* espaço menor para o botão; evita que fique fora da viewport */
   .btn-wrapper {
     margin-top: 32px;
+  }
+
+  /* Responsivo: centraliza os links em telas pequenas */
+  @media (max-width: 600px) {
+    #sitemap ul {
+      text-align: center;
+    }
   }
 }
