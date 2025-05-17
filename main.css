@@ -525,6 +525,7 @@ body.loaded #img_principal {
   font-size: xx-large;
   width: 25%;
   text-align: left;
+  margin-left: 10%
 }
 
 .form-container {
@@ -809,3 +810,114 @@ footer {
 .titillium-web-regular-italic { font-weight: 400; font-style: italic; }
 .titillium-web-semibold-italic { font-weight: 600; font-style: italic; }
 .titillium-web-bold-italic { font-weight: 700; font-style: italic; }
+
+/* =========================================================
+   ≥1201 px  ➜ layout original (flex‑row, 25 % + 50 %)
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   ≤1200 px  ➜ desktop médio / notebook
+   --------------------------------------------------------- */
+@media (max-width: 1200px) {
+  /* empilha a coluna de texto e o formulário */
+  #rentabilizar {
+    flex-direction: column;
+    text-align: center;
+    padding: 6% 5% 8%;
+  }
+
+  /* subtítulo e formulário centralizados e mais largos */
+  #subtitulo_formulario,
+  .form-container {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  #subtitulo_formulario {
+    margin-left: 0;         /* zera recuo */
+    text-align: center;     /* centraliza texto */
+    font-size: 2rem;        /* levemente menor */
+  }
+
+  /* evita que o botão fique longe demais quando empilhado */
+  .btn-wrapper {
+    margin-top: 6vh;
+  }
+}
+
+/* ---------------------------------------------------------
+   ≤992 px  ➜ tablets
+   --------------------------------------------------------- */
+@media (max-width: 992px) {
+  /* fields em uma coluna */
+  .dupla,
+  .grid-campos {
+    grid-template-columns: 1fr;
+  }
+
+  /* diminui paddings e bordas para caber melhor */
+  .form-container {
+    padding: 24px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"],
+  textarea,
+  select {
+    padding: 8px;
+    font-size: 0.95rem;
+  }
+
+  legend {
+    font-size: 1rem;
+  }
+
+  /* radios/checkboxes: alinhar em coluna quando necessário */
+  .radio-inline-group,
+  .checkbox-group,
+  .radio-group {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn-wrapper {
+    margin-top: 48px;
+  }
+}
+
+/* ---------------------------------------------------------
+   ≤600 px  ➜ smartphones
+   --------------------------------------------------------- */
+@media (max-width: 600px) {
+  html {
+    font-size: 14px;        /* tipografia geral menor */
+  }
+
+  #rentabilizar {
+    padding-top: 10%;
+  }
+
+  .form-container {
+    width: 100%;
+    padding: 20px 16px;
+  }
+
+  /* títulos em uma linha só e centrados */
+  #subtitulo_formulario h2 {
+    font-size: 1.6rem;
+    line-height: 1.2;
+  }
+
+  /* botão mais compacto */
+  .btn-submit {
+    font-size: 1rem;
+    padding: 12px 28px;
+  }
+
+  /* espaço menor para o botão; evita que fique fora da viewport */
+  .btn-wrapper {
+    margin-top: 32px;
+  }
+}
