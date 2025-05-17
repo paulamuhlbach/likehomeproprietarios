@@ -1,5 +1,4 @@
 /* Estilo básico para a página */
-
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
 
 html, body {
@@ -20,9 +19,15 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-a{
+a {
   color: #ffffff;        
   text-decoration: none; 
   transition: color 0.3s ease;
@@ -80,6 +85,7 @@ nav {
     font-size: 1rem;
   }
 }
+
 
 main {
   padding: 0px;
@@ -151,6 +157,10 @@ main {
 /* Aplica o zoom na imagem ao carregar a página */
 body.loaded #img_principal {
   transform: scale(1.5); /* Nível de zoom desejado */
+}
+
+#sobre, #vantagens, #servicos, #rentabilizar {
+  scroll-margin-top: 90px; /* ajuste conforme a altura do header */
 }
 
 #sobre{
