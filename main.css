@@ -187,6 +187,38 @@ body.loaded #img_principal {
   display: block;
 }
 
+#img_e_btn_sobre{
+  text-align: right;
+ 
+}
+.btn-link-sobre {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  margin-top: -2%;
+  margin-right: 10%;
+  background-color: #f0f0f0;
+  color: #000000;
+  border-radius: 28px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-link-sobre:hover {
+  background-color: #000000;
+  color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.icon-fone {
+  width: 30px;
+}
+
 /* Adapta o layout em telas menores */
 @media (max-width: 768px) {
   #container_sobre {
